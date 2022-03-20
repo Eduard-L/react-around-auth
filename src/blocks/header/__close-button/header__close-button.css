@@ -1,0 +1,21 @@
+.header__close-button {
+	background-image: url(../../../images/close__menu-logo.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	border-style: none;
+	height: 30px;
+	width: 30px;
+	padding: 0px;
+	transition: opacity .3s ease-in-out;
+	cursor: pointer;
+}
+
+.header__close-button:hover {
+	opacity: 0.6;
+}
+@media screen and (min-width: 670px) {
+	.header__close-button {
+		display: none;
+	}
+}

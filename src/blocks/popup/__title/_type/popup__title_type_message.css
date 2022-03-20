@@ -1,0 +1,11 @@
+.popup__title_type_message {
+	max-width: 358px;
+	text-align: center;
+	margin: 0px auto 30px;
+}
+@media screen and (max-width: 320px) {
+	.popup__title_type_message {
+		max-width: 244px;
+		margin: 10px auto 50px;
+	}
+}

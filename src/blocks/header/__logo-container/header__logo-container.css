@@ -1,0 +1,14 @@
+@media screen and (max-width: 670px) {
+	.header__logo-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+		padding-top: 27px;
+	}
+}
+.header__logo-container_is-loggedOut {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}

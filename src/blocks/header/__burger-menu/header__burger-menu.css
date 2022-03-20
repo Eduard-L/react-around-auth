@@ -1,0 +1,20 @@
+.header__burger-menu {
+	background-image: url(../../../images/burger-menu.svg);
+	width: 24px;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: none;
+	height: 20px;
+	background-color: transparent;
+	border-style: none;
+	cursor: pointer;
+	transition: opacity .3s ease-in-out;
+}
+.header__burger-menu:hover {
+	opacity: 0.6;
+}
+@media screen and (max-width: 670px) {
+	.header__burger-menu {
+		display: block;
+	}
+}

@@ -1,0 +1,5 @@
+@media screen and (max-width: 320px) {
+	.popup__close-button_type_message {
+		right: 120px;
+	}
+}

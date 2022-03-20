@@ -1,0 +1,23 @@
+.register__link {
+	font-family: 'Inter', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	text-align: center;
+	margin-top: 15px;
+	color: #ffffff;
+	text-decoration: none;
+	opacity: 1;
+	transition: opacity .5s ease-in-out;
+}
+.register__link:hover {
+	opacity: 0.6;
+}
+@media screen and (max-width: 320px) {
+	.register__link {
+		font-size: 12px;
+		line-height: 15px;
+		margin-top: 20px;
+	}
+}
