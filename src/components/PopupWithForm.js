@@ -1,11 +1,11 @@
-
-function PopupWithForm({ name, title, onSubmit, buttonText, children, onClose, isFormLoading }) {
+import Popup from "./Popup"
+function PopupWithForm({ name, title, onSubmit, buttonText, children, onClose, isFormLoading, isOpen }) {
 
 
 
     return (
 
-        <>
+        <Popup name={name} onClose={onClose} isOpen={isOpen}>
             <div className="popup__content">
                 <h2 className="popup__title ">{title}</h2>
                 <form className="popup__form" name={name} onSubmit={onSubmit}   >
@@ -19,7 +19,8 @@ function PopupWithForm({ name, title, onSubmit, buttonText, children, onClose, i
                 >
                 </button>
             </div>
-        </>
+        </Popup>
+
 
 
 

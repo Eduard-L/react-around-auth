@@ -1,4 +1,4 @@
-import Popup from "./Popup";
+
 import { PopupWithForm } from "./PopupWithForm";
 export function DeleteCardPopup({ onClose, name, isOpen, handleDeleteCard, cardForDelete, isFormLoading }) {
 
@@ -8,19 +8,20 @@ export function DeleteCardPopup({ onClose, name, isOpen, handleDeleteCard, cardF
     }
 
     return (
-        <Popup onClose={onClose} name={name} isOpen={isOpen} >
-            <PopupWithForm
 
+        <PopupWithForm
 
-                title="Are you sure?"
-                onClose={onClose}
-                buttonText={`${isFormLoading ? "Deleting Card..." : "Save"}`}
-                onSubmit={handleSubmitDeleteCard}
-                isFormLoading={isFormLoading}
-            >
+            name={name}
+            title="Are you sure?"
+            onClose={onClose}
+            buttonText={`${isFormLoading ? "Deleting Card..." : "Save"}`}
+            onSubmit={handleSubmitDeleteCard}
+            isFormLoading={isFormLoading}
+            isOpen={isOpen}
+        >
 
-            </PopupWithForm>
-        </Popup>
+        </PopupWithForm>
+
 
 
     )

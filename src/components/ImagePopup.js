@@ -1,9 +1,9 @@
-function ImagePopup({ selectedCard, onClose }) {
+import Popup from "./Popup"
+function ImagePopup({ selectedCard, onClose, name, isOpen }) {
     return (
 
-        // <div className={`popup popup_type_zoom-image ${isOpen ? 'popup_visible' : ""}`}>
-        //    
-        <>
+
+        <Popup name={name} isOpen={isOpen} onClose={onClose}>
             <div className="popup__content popup__content-wrapper">
                 <img src={selectedCard.link} alt="image preview" className="popup__image" />
                 <figure className="popup__figure">{`${selectedCard.name}`}</figure>
@@ -17,7 +17,7 @@ function ImagePopup({ selectedCard, onClose }) {
                 </button>
 
             </div>
-        </>
+        </Popup>
 
 
 

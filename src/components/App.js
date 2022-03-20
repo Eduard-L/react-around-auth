@@ -48,53 +48,6 @@ function App() {
   const [isSuccessMessageOpen, setIsSuccessMessageOpen] = useState(false)
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false)
 
-  // Validators
-  // 
-  // useEffect(() => {
-  //   const addCardForm = document.querySelector(".popup_type_add-card").querySelector('.popup__form');
-  //   const addCardFormValidator = new FormValidator(pageSettings, addCardForm);
-  //   const editProfileForm = document.querySelector(".popup_type_edit-profile").querySelector('.popup__form');
-  //   const EditProfileFormValidator = new FormValidator(pageSettings, editProfileForm);
-  //   const editProfilePicForm = document.querySelector('.popup_type_edit-profile-img').querySelector('.popup__form')
-  //   // const EditProfilePicFormValidator = new FormValidator(pageSettings, editProfilePicForm);
-  //   const forms = document.forms;
-
-
-  //   addCardFormValidator.enableValidation();
-  //   EditProfileFormValidator.enableValidation();
-  //   // EditProfilePicFormValidator.enableValidation()
-
-
-  // }, [])
-
-  // // useEffect(() => {
-  // //   const editProfileForm = document.querySelector(".popup_type_edit-profile").querySelector('.popup__form');
-  // //   const EditProfileFormValidator = new FormValidator(pageSettings, editProfileForm);
-
-  // //   if (isEditProfilePopupOpen) {
-  // //     EditProfileFormValidator.resetValidation();
-  // //   }
-  // // }, [isEditProfilePopupOpen])
-
-  // useEffect(() => {
-
-  //   const editProfilePicForm = document.querySelector('.popup_type_edit-profile-img').querySelector('.popup__form')
-  //   const EditProfilePicFormValidator = new FormValidator(pageSettings, editProfilePicForm);
-
-  //   if (isEditAvatarPopupOpen) {
-  //     EditProfilePicFormValidator.resetValidation();
-  //   }
-
-  // }, [isEditAvatarPopupOpen])
-
-  // useEffect(() => {
-  //   const addCardForm = document.querySelector(".popup_type_add-card").querySelector('.popup__form');
-  //   const addCardFormValidator = new FormValidator(pageSettings, addCardForm);
-  //   if (isAddPlacePopupOpen) {
-  //     addCardFormValidator.resetValidation();
-  //   }
-  // }, [isAddPlacePopupOpen])
-
 
   function handleRegisterForm() {
 
@@ -358,15 +311,13 @@ function App() {
         handleLoginInForm();
 
       }
-      else {
-        setPassword('')
-        setEmail('')
-        setIsFailedMessageOpen(true);
-      }
+
     }
     catch (e) {
       console.log('something went wrong with backend', e)
-      alert('something went wrong with the server while the registartion')
+      setPassword('')
+      setEmail('')
+      setIsFailedMessageOpen(true);
     }
   }
 
@@ -387,16 +338,14 @@ function App() {
         setIsSuccessMessageOpen(true);
         localStorage.setItem('jwt', resWithToken.token)
       }
-      else {
-        setIsFailedMessageOpen(true)
-        setEmail('');
-        setPassword('');
 
-      }
     }
     catch (e) {
       console.log('something went wrong with backend', e)
-      alert('something went wrong with the server', e)
+      setIsFailedMessageOpen(true)
+      setEmail('');
+      setPassword('');
+
     }
 
   }
@@ -497,9 +446,9 @@ function App() {
           <Route path='*' element={<Navigate to='/signin' />} />
 
         </Routes>
-        <Popup onClose={closeAllPopups} isOpen={isImagePopupIsOpen} isImagePopupIsOpen={isImagePopupIsOpen} name="zoom-image" children>
-          <ImagePopup selectedCard={selectedCard} onClose={closeAllPopups} />
-        </Popup>
+
+        <ImagePopup selectedCard={selectedCard} onClose={closeAllPopups} isOpen={isImagePopupIsOpen} name="zoom-image" />
+
 
         <EditProfilePopup
           isOpen={isEditProfilePopupOpen}
